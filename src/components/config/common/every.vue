@@ -1,7 +1,7 @@
 <template>
   <div class="cell-div">
     <el-radio v-model="type_" :label="label" @change="change">
-      <span class="cell-symbol">{{ tag_ }}</span> {{ $t('common.every') }}{{ timeUnit }}
+      <span class="cell-symbol">{{ tag_ }}</span> {{ $t('cron.common.every') }}{{ timeUnit }}
     </el-radio>
   </div>
 </template>

@@ -105,10 +105,10 @@ export default {
       type_: UNFIXED,
       // expression of second
       tag_: null,
-      timeUnit: this.$t('dayOfWeek.timeUnit'),
-      targetTimeUnit: this.$t('month.title'),
+      timeUnit: this.$t('cron.dayOfWeek.timeUnit'),
+      targetTimeUnit: this.$t('cron.month.title'),
       symbol: DAY_OF_WEEK_SYMBOL,
-      val: this.$t('dayOfWeek.val'),
+      val: this.$t('cron.dayOfWeek.val'),
       nums: [],
       startConfig: {
         min: LOWER_LIMIT,

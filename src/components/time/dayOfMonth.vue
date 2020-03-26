@@ -116,10 +116,10 @@ export default {
       type_: EVERY,
       // expression of second
       tag_: null,
-      timeUnit: this.$t('dayOfMonth.timeUnit'),
-      targetTimeUnit: this.$t('month.title'),
+      timeUnit: this.$t('cron.dayOfMonth.timeUnit'),
+      targetTimeUnit: this.$t('cron.month.title'),
       symbol: DAY_OF_MONTH_SYMBOL,
-      val: this.$t('dayOfMonth.val'),
+      val: this.$t('cron.dayOfMonth.val'),
       nums: [],
       startConfig: {
         min: LOWER_LIMIT,

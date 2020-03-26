@@ -28,64 +28,64 @@
     <el-row class="cron-row">
       <el-tabs v-model="activeTabName" type="border-card">
         <el-tab-pane name="1">
-          <span slot="label">{{ $t('second.title') }}</span>
+          <span slot="label">{{ $t('cron.second.title') }}</span>
           <second
             :tag="tag.second"
             :size="size"
             @second-change="changeSecond"/>
         </el-tab-pane>
         <el-tab-pane name="2">
-          <span slot="label">{{ $t('minute.title') }}</span>
+          <span slot="label">{{ $t('cron.minute.title') }}</span>
           <minute
             :tag="tag.minute"
             :size="size"
             @minute-change="changeMinute"/>
         </el-tab-pane>
         <el-tab-pane name="3">
-          <span slot="label">{{ $t('hour.title') }}</span>
+          <span slot="label">{{ $t('cron.hour.title') }}</span>
           <hour
             :tag="tag.hour"
             :size="size"
             @hour-change="changeHour"/>
         </el-tab-pane>
         <el-tab-pane name="4">
-          <span slot="label">{{ $t('dayOfMonth.title') }}</span>
+          <span slot="label">{{ $t('cron.dayOfMonth.title') }}</span>
           <day-of-month
             :tag="tag.dayOfMonth"
             :size="size"
             @day-of-month-change="changeDayOfMonth"/>
         </el-tab-pane>
         <el-tab-pane name="5">
-          <span slot="label">{{ $t('month.title') }}</span>
+          <span slot="label">{{ $t('cron.month.title') }}</span>
           <month
             :tag="tag.month"
             :size="size"
             @month-change="changeMonth"/>
         </el-tab-pane>
         <el-tab-pane name="6">
-          <span slot="label">{{ $t('dayOfWeek.title') }}</span>
+          <span slot="label">{{ $t('cron.dayOfWeek.title') }}</span>
           <day-of-week
             :tag="tag.dayOfWeek"
             :size="size"
             @day-of-week-change="changeDayOfWeek"/>
         </el-tab-pane>
         <el-tab-pane name="7">
-          <span slot="label">{{ $t('year.title') }}</span>
+          <span slot="label">{{ $t('cron.year.title') }}</span>
           <year
             :tag="tag.year"
             :size="size"
             @year-change="changeYear"/>
         </el-tab-pane>
         <el-tab-pane name="8">
-          <span slot="label">{{ $t('common.help') }}</span>
+          <span slot="label">{{ $t('cron.common.help') }}</span>
           <div class="cell-div">
             <span style="margin-right: 10px;">
-              <el-button :disabled="!sample || sample.trim().length < 11" :size="size" type="primary" @click="changeTime(sample)">{{ $t('common.use') }}</el-button>
+              <el-button :disabled="!sample || sample.trim().length < 11" :size="size" type="primary" @click="changeTime(sample)">{{ $t('cron.common.use') }}</el-button>
             </span>
             <el-select
               v-model="sample"
               :size="size"
-              :placeholder="$t('common.placeholder')"
+              :placeholder="$t('cron.common.placeholder')"
               :filter-method="filterCase"
               style="min-width: 320px;"
               filterable>
@@ -103,8 +103,8 @@
             </span>
           </div>
           <div v-for="(item, index) in timeUnits" :key="index">
-            {{ item }}:{{ $t('common.valTip') }}<strong>{{ vals[index] }}</strong>
-            {{ $t('common.symbolTip') }}<strong>{{ symbols[index] }}</strong>
+            {{ item }}:{{ $t('cron.common.valTip') }}<strong>{{ vals[index] }}</strong>
+            {{ $t('cron.common.symbolTip') }}<strong>{{ symbols[index] }}</strong>
           </div>
         </el-tab-pane>
       </el-tabs>
@@ -165,12 +165,12 @@ export default {
       },
       activeTabName: '1',
       timeUnits: [
-        this.$t('second.title'), this.$t('minute.title'), this.$t('hour.title'), this.$t('dayOfMonth.title'),
-        this.$t('month.title'), this.$t('dayOfWeek.title'), this.$t('year.title')
+        this.$t('cron.second.title'), this.$t('cron.minute.title'), this.$t('cron.hour.title'), this.$t('cron.dayOfMonth.title'),
+        this.$t('cron.month.title'), this.$t('cron.dayOfWeek.title'), this.$t('cron.year.title')
       ],
       vals: [
-        this.$t('second.val'), this.$t('minute.val'), this.$t('hour.val'), this.$t('dayOfMonth.val'),
-        this.$t('month.val'), this.$t('dayOfWeek.val'), this.$t('year.val')
+        this.$t('cron.second.val'), this.$t('cron.minute.val'), this.$t('cron.hour.val'), this.$t('cron.dayOfMonth.val'),
+        this.$t('cron.month.val'), this.$t('cron.dayOfWeek.val'), this.$t('cron.year.val')
       ],
       symbols: [
         BASE_SYMBOL, BASE_SYMBOL, BASE_SYMBOL, DAY_OF_MONTH_SYMBOL, BASE_SYMBOL, DAY_OF_WEEK_SYMBOL, BASE_SYMBOL
@@ -230,12 +230,12 @@ export default {
     },
     changeTime(newValue) {
       if (!newValue || newValue.trim().length < 11) {
-        this.$message.error(this.$t('common.wordNumError'))
+        this.$message.error(this.$t('cron.common.wordNumError'))
         return
       }
       const arr = newValue.trim().split(' ')
       if (arr.length !== 6 && arr.length !== 7) {
-        this.$message.error(this.$t('common.wordNumError'))
+        this.$message.error(this.$t('cron.common.wordNumError'))
         return
       }
       this.tag.second = arr[0]

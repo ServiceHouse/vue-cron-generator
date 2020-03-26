@@ -1,6 +1,6 @@
 <template>
   <div class="cell-div">
-    {{ $t('common.symbolTip') }}<strong>{{ symbol }}</strong>
+    {{ $t('cron.common.symbolTip') }}<strong>{{ symbol }}</strong>
   </div>
 </template>
 

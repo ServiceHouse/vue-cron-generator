@@ -2,7 +2,7 @@
   <div class="cell-div">
     <el-radio v-model="type_" :label="label" @change="change">
       <span class="cell-symbol">{{ tag_ }}</span>
-      {{ $t('common.current') }}{{ targetTimeUnit }}{{ $t('custom.lastTh') }}
+      {{ $t('cron.common.current') }}{{ targetTimeUnit }}{{ $t('cron.custom.lastTh') }}
       <el-input-number v-model="lastNum" :precision="0" :min="lastConfig.min" :step="lastConfig.step" :max="lastConfig.max" :size="size"/>
       {{ timeUnit }}
     </el-radio>
@@ -64,7 +64,7 @@ export default {
         }
         const num = newValue.substring(2, newValue.length - 1)
         if (!isNumber(num) || parseInt(num) < this.lastConfig.min - 1 || parseInt(num) > this.lastConfig.max - 1) {
-          this.$message.error(this.$t('common.numError') + ':' + num)
+          this.$message.error(this.$t('cron.common.numError') + ':' + num)
           return
         }
         this.lastNum = num + 1

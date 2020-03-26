@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h2>{{ $t('app.title') }}</h2>
+    <h2>{{ $t('cron.app.title') }}</h2>
     <el-row>
       <el-col :span="6" :offset="5">
         <el-select v-model="size" :size="size">

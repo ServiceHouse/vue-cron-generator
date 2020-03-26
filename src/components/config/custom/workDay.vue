@@ -2,9 +2,9 @@
   <div class="cell-div">
     <el-radio v-model="type_" :label="label" @change="change">
       <span class="cell-symbol">{{ tag_ }}</span>
-      {{ $t('common.every') }}{{ targetTimeUnit }}
+      {{ $t('cron.common.every') }}{{ targetTimeUnit }}
       <el-input-number v-model="startDate" :precision="0" :min="startDateConfig.min" :step="startDateConfig.step" :max="startDateConfig.max" :size="size"/>
-      {{ timeUnit }}{{ $t('common.nearest') }}{{ $t('custom.workDay') }}
+      {{ timeUnit }}{{ $t('cron.common.nearest') }}{{ $t('cron.custom.workDay') }}
     </el-radio>
   </div>
 </template>
@@ -60,7 +60,7 @@ export default {
         }
         const num = newValue.substring(0, newValue.length - WORK_DAY.length)
         if (!isNumber(num) || parseInt(num) < this.startDateConfig.min || parseInt(num) > this.startDateConfig.max) {
-          this.$message.error(this.$t('common.numError') + ':' + num)
+          this.$message.error(this.$t('cron.common.numError') + ':' + num)
           return
         }
         this.startDate = num

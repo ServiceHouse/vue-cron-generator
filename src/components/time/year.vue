@@ -82,9 +82,9 @@ export default {
       type_: EMPTY,
       // expression of second
       tag_: null,
-      timeUnit: this.$t('year.title'),
+      timeUnit: this.$t('cron.year.title'),
       symbol: BASE_SYMBOL,
-      val: this.$t('year.val'),
+      val: this.$t('cron.year.val'),
       nums: [],
       upper: LOWER_LIMIT,
       startConfig: {

@@ -2,13 +2,13 @@
   <div class="cell-div">
     <el-radio v-model="type_" :label="label" @change="change">
       <span class="cell-symbol">{{ tag_ }}</span>
-      {{ $t('common.current') }}{{ targetTimeUnit }}{{ $t('common.nth') }}
+      {{ $t('cron.common.current') }}{{ targetTimeUnit }}{{ $t('cron.common.nth') }}
       <el-input-number v-model="nth" :precision="0" :size="size" :min="1" :step="1" :max="5"/>
-      {{ $t('common.index') }}
+      {{ $t('cron.common.index') }}
       <el-select
         v-model="weekDayNum"
         :size="size"
-        :placeholder="$t('common.placeholder')"
+        :placeholder="$t('cron.common.placeholder')"
         style="width: 100px;"
         filterable>
         <el-option
@@ -73,15 +73,15 @@ export default {
         }
         const arr = newValue.split(WEEK_DAY)
         if (arr.length !== 2) {
-          this.$message.error(this.$t('common.tagError') + ':' + newValue)
+          this.$message.error(this.$t('cron.common.tagError') + ':' + newValue)
           return
         }
         if (!isNumber(arr[0]) || parseInt(arr[0]) < this.nums[0].value || parseInt(arr[0]) > this.nums[this.nums.length - 1].value) {
-          this.$message.error(this.$t('weekDay.weekDayNumError') + ':' + arr[0])
+          this.$message.error(this.$t('cron.weekDay.weekDayNumError') + ':' + arr[0])
           return
         }
         if (!isNumber(arr[1]) || parseInt(arr[1]) < 1 || parseInt(arr[1]) > 5) {
-          this.$message.error(this.$t('weekDay.nthError') + ':' + arr[1])
+          this.$message.error(this.$t('cron.weekDay.nthError') + ':' + arr[1])
           return
         }
         this.weekDayNum = parseInt(arr[0])
