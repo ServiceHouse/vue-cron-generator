@@ -213,12 +213,16 @@ export default {
     },
     changeDayOfMonth(tag) {
       this.tag.dayOfMonth = tag
+      // dayOfWeek and dayOfMonth cannot be set at the same time
+      this.tag.dayOfWeek = '?'
     },
     changeMonth(tag) {
       this.tag.month = tag
     },
     changeDayOfWeek(tag) {
       this.tag.dayOfWeek = tag
+      // dayOfWeek and dayOfMonth cannot be set at the same time
+      this.tag.dayOfMonth = '?'
     },
     changeYear(tag) {
       this.tag.year = tag
