@@ -2,11 +2,11 @@
   <div class="cell-div">
     <el-radio v-model="type_" :label="label" @change="change">
       <span class="cell-symbol">{{ tag_ }}</span>
-      {{ $t('common.between') }}
+      {{ $t('cron.common.between') }}
       <el-select
         v-model="lower"
         :size="size"
-        :placeholder="$t('common.placeholder')"
+        :placeholder="$t('cron.common.placeholder')"
         style="width: 100px;"
         filterable>
         <el-option
@@ -16,11 +16,11 @@
           :value="item.value"
           :disabled="item.value>upper"/>
       </el-select>
-      {{ $t('common.and') }}
+      {{ $t('cron.common.and') }}
       <el-select
         v-model="upper"
         :size="size"
-        :placeholder="$t('common.placeholder')"
+        :placeholder="$t('cron.common.placeholder')"
         style="width: 100px;"
         filterable>
         <el-option
@@ -30,7 +30,7 @@
           :value="item.value"
           :disabled="item.value<lower"/>
       </el-select>
-      {{ $t('common.end') }}{{ $t('common.every') }}{{ timeUnit }}
+      {{ $t('cron.common.end') }}{{ $t('cron.common.every') }}{{ timeUnit }}
     </el-radio>
   </div>
 </template>
@@ -83,19 +83,19 @@ export default {
         }
         const arr = newValue.split(RANGE)
         if (arr.length !== 2) {
-          this.$message.error(this.$t('common.tagError') + ':' + newValue)
+          this.$message.error(this.$t('cron.common.tagError') + ':' + newValue)
           return
         }
         if (!isNumber(arr[0]) || parseInt(arr[0]) < this.nums[0].value || parseInt(arr[0]) > this.nums[this.nums.length - 1].value) {
-          this.$message.error(this.$t('range.lowerError') + ':' + arr[0])
+          this.$message.error(this.$t('cron.range.lowerError') + ':' + arr[0])
           return
         }
         if (!isNumber(arr[1]) || parseInt(arr[1]) < this.nums[0].value || parseInt(arr[1]) > this.nums[this.nums.length - 1].value) {
-          this.$message.error(this.$t('range.upperError') + ':' + arr[1])
+          this.$message.error(this.$t('cron.range.upperError') + ':' + arr[1])
           return
         }
         if (parseInt(arr[0]) > parseInt(arr[1])) {
-          this.$message.error(this.$t('range.lowerBiggerThanUpperError') + ':' + arr[0] + '>' + arr[1])
+          this.$message.error(this.$t('cron.range.lowerBiggerThanUpperError') + ':' + arr[0] + '>' + arr[1])
           return
         }
         this.lower = parseInt(arr[0])

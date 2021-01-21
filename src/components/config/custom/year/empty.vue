@@ -1,7 +1,7 @@
 <template>
   <div class="cell-div">
     <el-radio v-model="type_" :label="label" @change="change">
-      &nbsp;{{ $t('custom.empty') }}
+      &nbsp;{{ $t('cron.custom.empty') }}
     </el-radio>
   </div>
 </template>

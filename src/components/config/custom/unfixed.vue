@@ -2,7 +2,7 @@
   <div class="cell-div">
     <el-radio v-model="type_" :label="label" @change="change">
       <span class="cell-symbol">{{ tag_ }}</span>
-      {{ $t('custom.unspecified') }}
+      {{ $t('cron.custom.unspecified') }}
     </el-radio>
   </div>
 </template>

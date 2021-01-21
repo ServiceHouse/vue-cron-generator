@@ -5,12 +5,12 @@
         <div slot="content">{{ tag_ }}</div>
         <span class="cell-symbol">,</span>
       </el-tooltip>
-      {{ $t('common.specified') }}
+      {{ $t('cron.common.specified') }}
       <el-select
         v-model="numArray"
         :collapse-tags="collapsed"
         :size="size"
-        :placeholder="$t('common.placeholderMulti')"
+        :placeholder="$t('cron.common.placeholderMulti')"
         filterable
         multiple
         style="width: 100%;">
@@ -86,7 +86,7 @@ export default {
           tempNumArr = []
         arr.forEach(num => {
           if (!isNumber(num) || parseInt(num) < this.nums[0].value || parseInt(num) > this.nums[this.nums.length - 1].value) {
-            this.$message.error(this.$t('common.numError') + ':' + num)
+            this.$message.error(this.$t('cron.common.numError') + ':' + num)
             return
           }
           tempNumArr.push(parseInt(num))

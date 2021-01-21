@@ -73,9 +73,9 @@ export default {
       type_: EVERY,
       // expression of second
       tag_: null,
-      timeUnit: this.$t('month.title'),
+      timeUnit: this.$t('cron.month.title'),
       symbol: BASE_SYMBOL,
-      val: this.$t('month.val'),
+      val: this.$t('cron.month.val'),
       nums: [],
       startConfig: {
         min: LOWER_LIMIT,

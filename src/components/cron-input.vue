@@ -2,7 +2,7 @@
   <div>
     <el-popover v-model="visible">
       <cron v-model="cron_" :size="size" @change="change"/>
-      <el-input slot="reference" v-model="cron_" :placeholder="$t('common.inputPlaceholder')" :size="size">
+      <el-input slot="reference" v-model="cron_" :placeholder="$t('cron.common.inputPlaceholder')" :size="size">
         <el-button slot="append" icon="el-icon-refresh" @click="reset"/>
       </el-input>
     </el-popover>
@@ -44,7 +44,7 @@ export default {
   methods: {
     setCron(newValue) {
       if (!newValue || newValue.trim().length < 11) {
-        this.$message.error(this.$t('common.wordNumError'))
+        this.$message.error(this.$t('cron.common.wordNumError'))
         return
       }
       this.cron_ = newValue

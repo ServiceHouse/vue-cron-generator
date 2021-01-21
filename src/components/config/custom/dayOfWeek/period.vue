@@ -2,11 +2,11 @@
   <div class="cell-div">
     <el-radio v-model="type_" :label="label" @change="change">
       <span class="cell-symbol">{{ tag_ }}</span>
-      {{ $t('common.from') }}
+      {{ $t('cron.common.from') }}
       <el-select
         v-model="start"
         :size="size"
-        :placeholder="$t('common.placeholder')"
+        :placeholder="$t('cron.common.placeholder')"
         style="width: 100px;"
         filterable>
         <el-option
@@ -15,7 +15,7 @@
           :label="item.label"
           :value="item.value"/>
       </el-select>
-      {{ $t('common.start') }}{{ $t('common.every') }}
+      {{ $t('cron.common.start') }}{{ $t('cron.common.every') }}
       <el-input-number v-model="cycle" :precision="0" :min="cycleConfig.min" :step="cycleConfig.step" :max="cycleConfig.max" :size="size"/>
       {{ timeUnit }}
     </el-radio>
@@ -78,15 +78,15 @@ export default {
         }
         const arr = newValue.split(PERIOD)
         if (arr.length !== 2) {
-          this.$message.error(this.$t('common.tagError') + ':' + newValue)
+          this.$message.error(this.$t('cron.common.tagError') + ':' + newValue)
           return
         }
         if (!isNumber(arr[0]) || parseInt(arr[0]) < this.startConfig.min || parseInt(arr[0]) > this.startConfig.max) {
-          this.$message.error(this.$t('period.startError') + ':' + arr[0])
+          this.$message.error(this.$t('cron.period.startError') + ':' + arr[0])
           return
         }
         if (!isNumber(arr[1]) || parseInt(arr[1]) < this.cycleConfig.min || parseInt(arr[1]) > this.cycleConfig.max) {
-          this.$message.error(this.$t('period.cycleError') + ':' + arr[1])
+          this.$message.error(this.$t('cron.period.cycleError') + ':' + arr[1])
           return
         }
         this.start = parseInt(arr[0])
